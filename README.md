@@ -1,57 +1,97 @@
-# 🤖 AskBuddy – AI QnA Bot
+# 🤖 COGNIX — AI Agent
 
-An AI-powered Question & Answer chatbot built using **LangChain, Google Gemini, and Streamlit**.
+> An intelligent AI agent built with Python, LangChain, LangGraph, Groq and Streamlit.
 
-## 🚀 Live Demo
+COGNIX is a fast AI-powered conversational agent that can generate responses using an LLM, search Google when additional information is required, remember conversation context, and stream responses in real time.
 
-[Try AskBuddy Live](YOUR_STREAMLIT_APP_URL)
+## 🚀 Features
+
+- ⚡ **Fast AI responses** powered by Groq
+- 🔎 **Google Search integration** for information beyond the model's knowledge
+- 🧠 **Conversation memory** using LangGraph MemorySaver
+- 📡 **Real-time streaming responses**
+- 🤖 **AI Agent architecture** using LangChain/LangGraph
+- 💬 **Interactive chat interface** using Streamlit
+- 🔐 Environment variables for API keys
 
 ## 🛠️ Tech Stack
 
 - Python
 - LangChain
-- Google Gemini
+- LangGraph
+- Groq
 - Streamlit
-- python-dotenv
+- Google Serper API
+- dotenv
 
-## ✨ Features
+## 🧠 How COGNIX Works
 
-- 💬 Interactive AI chatbot
-- 🧠 Powered by Google Gemini
-- 🔗 LangChain integration
-- 🖥️ Streamlit web interface
-- 💾 Chat history using Streamlit session state
-- 🔐 Secure API key management
-- ☁️ Deployed on Streamlit Community Cloud
+1. User enters a question through the Streamlit interface.
+2. The question is sent to the Groq-powered LLM.
+3. The agent can decide to use Google Search when external information is needed.
+4. Conversation state is maintained using LangGraph's `MemorySaver`.
+5. The response is streamed to the user in real time.
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```text
-GENAI_SERIES/
+GENAI_Series/
+│
 ├── apps/
-│   └── 1_qna_bot.py
+│   ├── cognix.py
+│   ├── 1_qna_bot.py
+│   └── 2_google_agent.py
+│
 ├── notebooks/
-│   ├── 1_basic_langchain_with_openai.ipynb
-│   └── 2_prompts_chains.ipynb
+│   ├── 1_basic_langchain.ipynb
+│   ├── 2_prompts_chains.ipynb
+│   ├── 3_basic_memory.ipynb
+│   ├── 4_structured_output.ipynb
+│   ├── 5_ollama_app.ipynb
+│   ├── 6_groq_langchain.ipynb
+│   ├── 7_streaming_responses.ipynb
+│   ├── 8_basic_agent.ipynb
+│   └── 9_google_search_agent.ipynb
+│
 ├── requirements.txt
-├── README.md
-└── .gitignore
+├── .gitignore
+└── README.md
 
-⚙️ Run Locally
-git clone https://github.com/gitanjalimishra584-droid/GENAI_SERIES.git
-cd GENAI_SERIES
-
+⚙️ Setup
+Clone the repository:
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+cd GENAI_Series
+Create and activate a virtual environment:
 python -m venv env
 source env/bin/activate
-
+Install dependencies:
 pip install -r requirements.txt
+Create a .env file and add your API keys:
+GROQ_API_KEY=your_groq_api_key
+SERPER_API_KEY=your_serper_api_key
+Run COGNIX:
+streamlit run apps/cognix.py
 
-Create a .env file:
-GOOGLE_API_KEY="your_api__key_here"
+⚡ Performance
+COGNIX is designed for fast conversational interaction using Groq's inference infrastructure and streaming responses, allowing generated text to appear progressively instead of waiting for the complete response.
 
-Run the application:
-https://genaiseries-2hgssspz5cvzvwzf52g44w.streamlit.app/
+📚 Learning Journey
+This project was built after learning core GenAI concepts including:
+LangChain fundamentals
+Prompting and chains
+Memory
+Structured outputs
+Groq integration
+Streaming
+AI agents
+Google Search tools
+LangGraph
 
-👨‍💻 Author
-Gitanjali Mishra
-Built as part of my journey into Generative AI and AI Engineering.
+🔮 Future Improvements
+Persistent database-backed memory
+Better tool selection
+Multiple conversation threads
+Improved UI/UX
+Additional tools
+RAG integration
+Deployment as a public web application
