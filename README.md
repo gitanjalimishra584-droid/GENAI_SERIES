@@ -2,6 +2,8 @@
 
 > An intelligent AI agent built with Python, LangChain, LangGraph, Groq and Streamlit.
 
+🚀 **[Live Demo](https://genaiseries-jqegqqlbshxfneyacagw6w.streamlit.app/)**
+
 COGNIX is a fast AI-powered conversational agent that can generate responses using an LLM, search Google when additional information is required, remember conversation context, and stream responses in real time.
 
 ## 🚀 Features
