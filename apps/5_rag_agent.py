@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-
+import os
 from langchain_community.document_loaders import PyPDFLoader, PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -102,8 +102,9 @@ if not st.session_state.document_uploaded:
         with st.spinner("Processing..."):
             path = "./doc_files/"
             for file in uploaded:
+                os.makedirs(path, exist_ok=True)
                 with open(path + file.name, "wb") as f:
-                    f.write(file.getvalue())
+                    f.write(file.getbuffer())
 
             process_document(path)
             st.rerun()
