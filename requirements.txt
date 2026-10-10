@@ -14,6 +14,3 @@ beautifulsoup4
 wikipedia
 langchain-text-splitters
 langchain-chroma
-langchain-huggingface
-sentence-tranformers
-torch

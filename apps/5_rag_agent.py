@@ -4,7 +4,7 @@ load_dotenv()
 
 from langchain_community.document_loaders import PyPDFLoader, PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_groq import ChatGroq
 from langchain_community.vectorstores import InMemoryVectorStore
 from langchain.agents import create_agent
@@ -41,8 +41,8 @@ def process_document(path):
 
 
     ## embeddings and Vector DB
-    embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+    embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001"
 )
     vector_db = InMemoryVectorStore.from_documents(
         documents=docs,
